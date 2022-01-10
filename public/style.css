@@ -1,0 +1,946 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0%;
+  padding: 0%;
+  font-family: sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+/* header */
+.header {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.header.bar {
+  background-color: #ff000085;
+  text-align: center;
+  height: 10vh;
+}
+
+/* sliding banner */
+.banner.container {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+}
+.banner.container .text {
+  color: #000000; /*set color*/
+  position: relative;
+  top: 20%;
+  font-size: 20px;
+}
+
+@media only screen and (max-height: 700px) {
+  .banner.container .text {
+    color: #000000; /*set color*/
+    position: relative;
+    top: 15%;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .banner.container .text {
+    color: #000000; /*set color*/
+    position: relative;
+    top: 25%;
+    font-size: 15px;
+    animation: marquee 7s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    top: 100%;
+    transform: translate(0, 0%);
+  }
+  100% {
+    top: 0%;
+    transform: translate(0, -100%);
+  }
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  position: relative;
+}
+
+/* Left and right column campaign*/
+.column.side {
+  display: flex;
+  position: relative;
+  width: 25%;
+  height: 80vh;
+  background-color: #f1f1f1;
+}
+
+/* Campaign Slideshow container */
+.mySlides {
+  display: none;
+}
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Slideshow container */
+#slideshow-container {
+  display: flex;
+  position: relative;
+  width: 25%;
+  height: 80vh;
+}
+
+/* Season text */
+.numbertext {
+  color: #ffffff;
+  padding: 8px 12px;
+  margin: auto;
+  font-size: 70px;
+  position: relative;
+  top: 0px;
+  z-index: 10;
+}
+
+/* On smaller screens, decrease text size */
+@media screen and (max-width: 600px) {
+  #slideshow-container {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    background-color: #f1f1f1;
+  }
+
+  img {
+    max-width: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .numbertext {
+    color: #ffffff;
+    font-size: 70px;
+  }
+}
+
+/* HERO column */
+.column.middle {
+  width: 75%;
+  height: 80vh;
+  background-image: url(/content/F20/F1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* STOCK Middle column split */
+.column.split {
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+}
+
+.stock-header {
+  position: absolute;
+  left: 50px;
+  z-index: 10;
+  font-size: 50px;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .stock-header {
+    position: absolute;
+    z-index: 10;
+    font-size: 10px;
+  }
+}
+/*STOCK*/
+.wrapper {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+  background: #ddd;
+}
+
+/* Images */
+
+.carousel-img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  -webkit-transition: opacity ease-out 0.5s;
+  transition: opacity ease-out 0.5s;
+}
+
+.carousel-img-displayed {
+  display: block;
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-img-hidden {
+  display: block;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-img-noDisplay {
+  display: none;
+}
+
+.carousel-arrow {
+  z-index: 3;
+  display: block;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 50%;
+  margin-top: -18px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #fff;
+  background-image: url("http://res.cloudinary.com/dnqehhgmu/image/upload/v1509720334/blue-arrow_jk1ydw.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  cursor: pointer;
+  -webkit-transition: background-size 0.15s ease-out;
+  transition: background-size 0.15s ease-out;
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:focus {
+  background-size: 22px 22px;
+}
+
+.carousel-arrow-next {
+  right: 20px;
+}
+
+.carousel-arrow-prev {
+  left: 20px;
+  -webkit-transform: rotateZ(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotateZ(180deg);
+}
+
+/* collections column */
+.column.collections {
+  width: 100%;
+  height: 80vh;
+  background-color: #f1f1f1;
+}
+
+.collection-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 80%;
+}
+
+.collections {
+  position: relative;
+  width: 50%;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media only screen and (max-height: 700px) {
+  .collection-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    left: 15%;
+    width: 70%;
+    height: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .column.collections {
+    width: 100%;
+    height: 90vh;
+    background-color: #f1f1f1;
+  }
+  .collections {
+    position: relative;
+    width: 80%;
+  }
+  .collection-container {
+    margin: 20px auto;
+    width: 100%;
+    height: 500px;
+    display: grid;
+    justify-content: center;
+    left: 5%;
+    grid-template-columns: 200px 200px;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+
+/*Collections*/
+
+/*ALL*/
+.column.collections-fall,
+.column.collections-spring {
+  width: 100%;
+  height: 100vh;
+  background-color: #ff000085;
+}
+
+.column.collections-winter {
+  width: 100%;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+.Content::-webkit-scrollbar {
+  display: none;
+}
+
+.FixedHeightContainer {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 80%;
+  float: right;
+  overflow: auto;
+}
+.Content {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: #fff;
+}
+
+.inner {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.img-number {
+  font-size: 30px;
+}
+
+.img-number:hover {
+  color: #2bc505;
+}
+
+/*FALL 20 ID's*/
+
+#fall20-one {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/F20/F1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#fall20-two {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/F20/F2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#fall20-three {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/F20/F3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#fall20-four {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/F20/F4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#fall20-five {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/F20/F5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#fall20-six {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/F20/F6.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#fall20-seven {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/F20/F7.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#fall20-eight {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/F20/F8.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#fall20-nine {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/F20/F9.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#fall20-ten {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/F20/F10.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*WINTER 20 ID's*/
+
+#winter20-one {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-two {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-three {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-four {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-five {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-six {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W6.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-seven {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W7.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-eight {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W8.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-nine {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W9.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-ten {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W10.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-eleven {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W11.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-twelve {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W12.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-thirteen {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W13.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-fourteen {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W14.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-fifteen {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W15.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-sixteen {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W16.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-seventeen {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W17.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-eightteen {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W18.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-nineteen {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W19.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-twenty {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W20.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter20-twentyone {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W20/W21.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*SPRING 21 ID's*/
+
+#spring21-one {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#spring21-two {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#spring21-three {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#spring21-four {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#spring21-five {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#spring21-six {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S6.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#spring21-seven {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S7.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#spring21-eight {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S8.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#spring21-nine {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S9.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#spring21-ten {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S10.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#spring21-eleven {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S11.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#spring21-twelve {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/S21/S12.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*WINTER 22 ID's*/
+
+#winter22-one {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W22/1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter22-two {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W22/2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter22-three {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W22/3.JPEG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter22-four {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W22/4.JPEG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter22-five {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W22/5.JPEG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter22-six {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W22/6.JPEG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter22-seven {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W22/7.JPEG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter22-eight {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W22/8.JPEG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter22-nine {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W22/9.JPEG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter22-ten {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W22/10.JPEG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#winter22-eleven {
+  position: relative;
+  height: 100%;
+  width: auto;
+  background-image: url(/content/W22/11.JPEG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* FOOTER column */
+.column.footer {
+  width: 50%;
+}
+
+.column.footer a {
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+.column.footer a:hover {
+  text-decoration: none;
+  color: #2bc505;
+  cursor: pointer;
+}
+
+/* footer column bottom */
+.footer.bottom {
+  text-align: center;
+}
+
+/* Responsive layout  */
+@media screen and (max-width: 600px) {
+  .column.side,
+  .column.middle,
+  .column.column.split,
+  .footer {
+    width: 100%;
+  }
+}
